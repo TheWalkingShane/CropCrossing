@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Text;
 using UnityEditor.IMGUI.Controls;
+using UnityEngine.Assertions.Must;
 using Random = UnityEngine.Random;
 
 public class Hybridization : MonoBehaviour
@@ -11,7 +12,8 @@ public class Hybridization : MonoBehaviour
     public GameObject slot1Crop;
     public GameObject slot2Crop;
     public GameObject finalSlot;
-
+    public GameObject hybridPlantPrefab;
+    
     public List<string> slot1Genes;
     public List<string> slot2Genes;
 
@@ -51,6 +53,8 @@ public class Hybridization : MonoBehaviour
         {
             Debug.Log(hybridGenes[i] + "\n");
         }
+        
+        CreateNewHybrid();
     }
     
     static List<string> Permutate(string characters)
@@ -151,5 +155,85 @@ public class Hybridization : MonoBehaviour
                 }
             }
         }
+    }
+
+    void CreateNewHybrid()
+    {
+        Instantiate(hybridPlantPrefab, finalSlot.transform);
+        GameObject hybrid = finalSlot.transform.GetChild(0).gameObject;
+
+        float newNutrition = 0, newYield = 0, newFirmness = 0, newLifespan = 0;
+
+        float[] statArray = hybrid.GetComponent<HybridStatKeeper>().GetStats();
+
+        for (int i = 0; i < 4; i++)
+        {
+            if (i == 0)
+            {
+                foreach (var gene in hybridGenes[0])
+                {
+                    if (gene == 'A')
+                    {
+                        newNutrition += 5;
+                    }
+                    else
+                    {
+                        newNutrition -= 5;
+                    }
+                    
+                }
+            }
+            
+            if (i == 1)
+            {
+                foreach (var gene in hybridGenes[1])
+                {
+                    if (gene == 'B')
+                    {
+                        newYield += 2;
+                    }
+                    else
+                    {
+                        newYield -= 2;
+                    }
+                    
+                }
+            }
+            
+            if (i == 2)
+            {
+                foreach (var gene in hybridGenes[2])
+                {
+                    if (gene == 'C')
+                    {
+                        newFirmness += 3;
+                    }
+                    else
+                    {
+                        newFirmness -= 3;
+                    }
+                    
+                }
+            }
+            
+            if (i == 3)
+            {
+                foreach (var gene in hybridGenes[3])
+                {
+                    if (gene == 'D')
+                    {
+                        newLifespan += 1;
+                    }
+                    else
+                    {
+                        newLifespan -= 1;
+                    }
+                    
+                }
+            }
+        }
+        
+        hybrid.GetComponent<HybridStatKeeper>().Set_New_Stats(newNutrition, newYield, newFirmness, newLifespan);
+        hybrid.GetComponent<HybridStatKeeper>().SetNewGenes(hybridGenes);
     }
 }    

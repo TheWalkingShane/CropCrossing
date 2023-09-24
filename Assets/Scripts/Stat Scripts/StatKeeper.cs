@@ -33,6 +33,7 @@ public class StatKeeper : MonoBehaviour
         firmness = newFirmness;
         lifespan = newLifespan;
     }
+    
     //this initial stats are completely arbitrary for the time being.
     //monetary value is deliberately absent and will likely only be incorporated once the money exists in the first place.
 }
