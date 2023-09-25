@@ -36,25 +36,21 @@ public class PlotManager : MonoBehaviour
                 plantStage++;
                 UpdatePlant();
             }
+            if (plantStage == plantStages.Length - 1)
+            {
+                Harvest();    
+            }
         }
     }
 
     private void OnMouseDown()
     {
-        if (isPlanted)
-        {
-            if (plantStage == plantStages.Length - 1)
-            {
-                Harvest();    
-            }
-            
-        }
-        else
+        if (!isPlanted)
         {
             Plant();
+            Debug.Log("Clicked");
         }
         
-        Debug.Log("Clicked");
     }
 
     void Harvest()
