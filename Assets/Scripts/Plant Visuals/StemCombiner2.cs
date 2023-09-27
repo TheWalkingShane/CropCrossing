@@ -2,65 +2,86 @@ using UnityEngine;
 
 public class StemCombiner2 : MonoBehaviour
 {
-    public Stem2 stemPrefab; // Prefab for the new stem
-    public Core2 corePrefab; // Prefab for the new core
-
-    public Stem2 currentStem1; // First plant to combine
-    public Stem2 currentStem2; // Second plant to combine
-
-    private void OnTriggerEnter(Collider other)
+    public GameObject objectToCopy1;
+    public GameObject objectToCopy2;
+    private GameObject cropCombination;
+    private void Start()
     {
-        // Check if the collided objects are stems
-        Stem2 stem = other.GetComponent<Stem2>();
-
-        if (stem != null)
+        //This start function is for testing purposes only
+        if (objectToCopy1 != null || objectToCopy2 != null)
         {
-            // If currentStem1 is not set, assign it to the first stem
-            if (currentStem1 == null)
+            Debug.Log("Calling Combine Objects");
+            CombineObjects();
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Crop"))
+        {
+            if (objectToCopy1 == null)
             {
-                currentStem1 = stem;
+                objectToCopy1 = collision.gameObject;
+                Debug.Log("Set objectToCopy1 to " + objectToCopy1.name);
             }
-            // If currentStem1 is already set, assign currentStem2 and create a new plant
-            else if (currentStem2 == null)
+            else if (objectToCopy2 == null)
             {
-                currentStem2 = stem;
-                CreateNewPlant();
+                objectToCopy2 = collision.gameObject;
+                Debug.Log("Set objectToCopy2 to " + objectToCopy2.name);
+            }
+        }
+        if (objectToCopy1 != null && objectToCopy2 != null)
+        {
+            CombineObjects();   
+        }
+        
+    }
+    private void CombineObjects()
+    {
+        // This is where you put the logic for combining objects
+        Debug.Log("Combining objects: " + objectToCopy1.name + " and " + objectToCopy2.name);
+
+        // Reset objectToCopy1 and objectToCopy2 to null if needed
+        
+        //Object 1 is our base crop.
+        cropCombination = objectToCopy1;
+        Stem2 cropCombinationStem = cropCombination.GetComponent<Stem2>();
+
+        //Object 2 is where we shall inherit core image and color.
+        Stem2 stem2Component = objectToCopy2.GetComponent<Stem2>();
+        //Inheriting values here{
+            cropCombinationStem.connectionPoint = stem2Component.connectionPoint;
+            cropCombinationStem.size = stem2Component.size;
+            cropCombinationStem.stemColor = stem2Component.stemColor;
+        //{
+        //Spawn object
+        Instantiate(cropCombination, transform.position, Quaternion.identity);
+        // Resetting objectToCopy1 and objectToCopy2 to null
+        objectToCopy1 = null;
+        objectToCopy2 = null;
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Crop"))
+        {
+            if (collision.gameObject == objectToCopy1)
+            {
+                objectToCopy1 = null;
+                Debug.Log("Cleared objectToCopy1");
+            }
+            else if (collision.gameObject == objectToCopy2)
+            {
+                objectToCopy2 = null;
+                Debug.Log("Cleared objectToCopy2");
             }
         }
     }
-
-    private void CreateNewPlant()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (stemPrefab == null || corePrefab == null || currentStem1 == null || currentStem2 == null)
-        {
-            Debug.LogError("Missing prefabs or stems for combination.");
-            return;
-        }
+        Debug.Log("Colliding with: " + collision.gameObject.name);
+    }
 
-        // Calculate the averaged color
-        Color averagedColor = (currentStem1.stemColor + currentStem2.stemColor) / 2f;
-
-        // Instantiate a new Stem and set its attributes
-        Stem2 newStemObject = Instantiate(stemPrefab, transform.position, Quaternion.identity);
-        Stem2 newStem = newStemObject.GetComponent<Stem2>();
-
-        newStem.SetStemAttributes(currentStem1.stemImage, averagedColor, currentStem1.size);
-
-        // Instantiate a new Core and set its attributes
-        Core2 newCoreObject = Instantiate(corePrefab, newStem.transform.position, Quaternion.identity);
-        Core2 newCore = newCoreObject.GetComponent<Core2>();
-
-        // Assuming that the stemPrefab and corePrefab objects are set up correctly in the Inspector
-        newCore.SetCoreAttributes(
-            averagedColor,
-            newStem.size, // Assuming that size is the correct property for core size
-            newStem.rotation, // Assuming that rotation is the correct property for core rotation
-            currentStem2.coreImage,
-            newStem.connectionPoint // Assuming that connectionPoint is the correct property for core connection
-        );
-
-        // Reset the stored stems
-        currentStem1 = null;
-        currentStem2 = null;
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        Debug.Log("No longer colliding with: " + collision.gameObject.name);
     }
 }

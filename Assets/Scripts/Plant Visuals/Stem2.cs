@@ -23,6 +23,37 @@ public class Stem2 : MonoBehaviour
         // Create the core object and set its attributes
         CreateCoreObject();
     }
+    // Getter methods for the variables
+    public Color GetStemColor()
+    {
+        return stemColor;
+    }
+
+    public Vector3 GetSize()
+    {
+        return size;
+    }
+
+    public Vector3 GetRotation()
+    {
+        return rotation;
+    }
+
+    public Sprite GetCoreImage()
+    {
+        return coreImage;
+    }
+
+    public Sprite GetStemImage()
+    {
+        return stemImage;
+    }
+
+    public GameObject GetConnectionPoint()
+    {
+        return connectionPoint;
+    }
+    
     public void SetStemAttributes(Sprite image, Color color, Vector3 newSize)
     {
         SpriteRenderer stemRenderer = GetComponent<SpriteRenderer>();
