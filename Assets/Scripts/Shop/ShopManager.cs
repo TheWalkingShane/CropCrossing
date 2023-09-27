@@ -9,7 +9,7 @@ public class ShopManager : MonoBehaviour
     
     public GameObject inventorySlotPrefab;
     public Transform inventoryGrid;
-
+    // to update
     
     public int[] prices = {10, 20, 30, 40}; // Prices for each item
     
