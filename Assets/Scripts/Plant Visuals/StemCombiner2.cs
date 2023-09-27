@@ -2,11 +2,15 @@ using UnityEngine;
 
 public class StemCombiner2 : MonoBehaviour
 {
-    public GameObject objectToCopy1;
-    public GameObject objectToCopy2;
+    public GameObject objectToCopy11;
+    public GameObject objectToCopy22;
+    private GameObject objectToCopy1;
+    private GameObject objectToCopy2;
     private GameObject cropCombination;
     private void Start()
     {
+        objectToCopy1 = objectToCopy11;
+        objectToCopy2 = objectToCopy22;
         //This start function is for testing purposes only
         if (objectToCopy1 != null || objectToCopy2 != null)
         {

@@ -21,6 +21,16 @@ public class Stem2 : MonoBehaviour
     private void Start()
     {
         // Create the core object and set its attributes
+        if (transform.parent != null)
+        {
+            Stem2 parentStem = transform.parent.GetComponent<Stem2>();
+            if (parentStem != null)
+            {
+                connectionPoint = parentStem.connectionPoint;
+                size = parentStem.size;
+                stemColor = parentStem.stemColor;
+            }
+        }
         CreateCoreObject();
     }
     // Getter methods for the variables
