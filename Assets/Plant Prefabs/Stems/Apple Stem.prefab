@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4050784508078482740}
   - component: {fileID: 4954042213532286917}
   - component: {fileID: 4750347158318471006}
+  - component: {fileID: 6922370269141848172}
+  - component: {fileID: 7921922510721852216}
   m_Layer: 0
   m_Name: Apple Stem
   m_TagString: Crop
@@ -20,22 +22,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5800112384056594297
-Transform:
+--- !u!224 &5800112384056594297
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1113921072644312599}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.67907685, y: 0.579, z: -5.07}
+  m_LocalPosition: {x: 0, y: 0, z: -5.07}
   m_LocalScale: {x: 2.5, y: 2.5, z: 45.5455}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6836672552940368083}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.67907685, y: 0.579}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!33 &131331688645249698
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -125,6 +131,28 @@ MonoBehaviour:
   coreImage: {fileID: 21300000, guid: 85c2c0cf1a6f69244ab292f4ea08b70f, type: 3}
   stemImage: {fileID: 21300000, guid: 487cda4ba7f479742aad217319f180e0, type: 3}
   connectionPoint: {fileID: 1244888259649171882, guid: 793c4444b19faa94c806f7bde8254bed, type: 3}
+--- !u!222 &6922370269141848172
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113921072644312599}
+  m_CullTransparentMesh: 1
+--- !u!114 &7921922510721852216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113921072644312599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94fc3d74a4c097048a17db9cebea78a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 8610899578042667990}
+  parentAfterDrag: {fileID: 0}
 --- !u!1 &3856246159841799569
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,6 +163,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6836672552940368083}
   - component: {fileID: 7432991547132004926}
+  - component: {fileID: 8710644970850891636}
+  - component: {fileID: 8610899578042667990}
   m_Layer: 5
   m_Name: Apple Stem Image
   m_TagString: Untagged
@@ -142,21 +172,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6836672552940368083
-Transform:
+--- !u!224 &6836672552940368083
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3856246159841799569}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.14, y: -7.34, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5800112384056594297}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.14, y: -7.34}
+  m_SizeDelta: {x: 0.32, y: 0.32}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &7432991547132004926
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -209,3 +243,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!222 &8710644970850891636
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3856246159841799569}
+  m_CullTransparentMesh: 1
+--- !u!114 &8610899578042667990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3856246159841799569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: 487cda4ba7f479742aad217319f180e0, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1

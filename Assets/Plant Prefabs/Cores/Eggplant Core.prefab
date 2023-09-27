@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: -2353890495491977896}
   - component: {fileID: 8717630470678360175}
   - component: {fileID: 3349354865414692731}
+  - component: {fileID: 4376827594192041274}
   m_Layer: 0
   m_Name: Eggplant Core
   m_TagString: Untagged
@@ -115,7 +116,7 @@ RectTransform:
   m_GameObject: {fileID: 8971900787229894682}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -2.8033059}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5691855430720581666}
@@ -244,3 +245,17 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &4376827594192041274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8971900787229894682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94fc3d74a4c097048a17db9cebea78a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 3349354865414692731}
+  parentAfterDrag: {fileID: 0}
