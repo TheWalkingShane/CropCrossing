@@ -35,7 +35,7 @@ public class Hybridization : MonoBehaviour
             finalSlot.transform.childCount == 0)
         {
             slot1Genes = slot1Crop.transform.GetChild(0).GetComponent<StatKeeper>().Retrieve_Genes();
-            slot2Genes = slot2Crop.transform.GetChild(0).GetComponent<StatKeeperB>().Retrieve_Genes();
+            slot2Genes = slot2Crop.transform.GetChild(0).GetComponent<StatKeeper>().Retrieve_Genes();
             GenerateGeneSequences();
         }
     }
@@ -164,7 +164,7 @@ public class Hybridization : MonoBehaviour
 
         float newNutrition = 0, newYield = 0, newFirmness = 0, newLifespan = 0;
 
-        float[] statArray = hybrid.GetComponent<HybridStatKeeper>().GetStats();
+        float[] statArray = hybrid.GetComponent<StatKeeper>().GetStats();
 
         for (int i = 0; i < 4; i++)
         {
@@ -233,7 +233,7 @@ public class Hybridization : MonoBehaviour
             }
         }
         
-        hybrid.GetComponent<HybridStatKeeper>().Set_New_Stats(newNutrition, newYield, newFirmness, newLifespan);
-        hybrid.GetComponent<HybridStatKeeper>().SetNewGenes(hybridGenes);
+        hybrid.GetComponent<StatKeeper>().Set_New_Stats(newNutrition, newYield, newFirmness, newLifespan);
+        hybrid.GetComponent<StatKeeper>().SetNewGenes(hybridGenes);
     }
 }    
