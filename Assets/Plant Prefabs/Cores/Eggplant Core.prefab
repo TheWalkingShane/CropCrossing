@@ -97,6 +97,8 @@ GameObject:
   - component: {fileID: 4030293761189653196}
   - component: {fileID: 576078322067958938}
   - component: {fileID: -2353890495491977896}
+  - component: {fileID: 8717630470678360175}
+  - component: {fileID: 3349354865414692731}
   m_Layer: 0
   m_Name: Eggplant Core
   m_TagString: Untagged
@@ -104,22 +106,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7725068804685166922
-Transform:
+--- !u!224 &7725068804685166922
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8971900787229894682}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.31659767, y: 0.1372, z: -2.8033059}
+  m_LocalPosition: {x: 0, y: 0, z: -2.8033059}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5691855430720581666}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.31659767, y: 0.1372}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!33 &8655628384463699270
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -203,3 +209,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dddcb4280dbc6f54c89a12dcc7f6648f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!222 &8717630470678360175
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8971900787229894682}
+  m_CullTransparentMesh: 1
+--- !u!114 &3349354865414692731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8971900787229894682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: fb83b8d1f2815fb4f9e7d16f00d8a4f8, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
