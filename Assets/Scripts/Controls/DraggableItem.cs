@@ -11,7 +11,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log("Begin Drag");
+        //Debug.Log("Begin Drag");
         // these three are in charge of taking it out of the slots so it can hover over the slots and not be hiding
         parentAfterDrag = transform.parent;
         transform.SetParent(transform.root);
@@ -22,14 +22,14 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     }
     public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log("Dragging");
+       // Debug.Log("Dragging");
         
         // records the movement of the mouse
         transform.position = Input.mousePosition;
     }
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("End Drag");
+       // Debug.Log("End Drag");
         //puts it back into the slot within the hierarchy
         transform.SetParent(parentAfterDrag);
         
