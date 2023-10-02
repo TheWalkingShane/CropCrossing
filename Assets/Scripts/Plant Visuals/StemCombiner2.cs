@@ -7,6 +7,7 @@ public class StemCombiner2 : MonoBehaviour
     private GameObject objectToCopy1;
     private GameObject objectToCopy2;
     private GameObject cropCombination;
+    
     private Collider2D myCollider;
     private bool hasCombined = false; // Our flag
     public InventorySlot[] inventorySlots; 
