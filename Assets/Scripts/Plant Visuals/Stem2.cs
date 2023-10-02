@@ -88,21 +88,9 @@ public class Stem2 : MonoBehaviour
 
         // Set the core's position, rotation, and scale relative to the connection point
         newConnectionPoint.transform.localRotation = Quaternion.Euler(rotation); // Example rotation
-        newConnectionPoint.transform.localScale += size;
-
-        // Find the core object within the connection point (assuming it's a child)
-        Transform coreTransform = newConnectionPoint.transform.Find("Core");
-
-        if (coreTransform != null)
-        {
-            // Get the SpriteRenderer component of the core
-            SpriteRenderer coreRenderer = coreTransform.GetComponent<SpriteRenderer>();
-
-                // Check if a valid stemColor is provided before setting the core's color
-                if (stemColor.a != 0f)
-                {
-                    coreRenderer.color = stemColor;
-                } 
-        }
+        newConnectionPoint.transform.localScale = size;
+        Core2 ColorCore = newConnectionPoint.GetComponent<Core2>();
+        stemColor.a = 1.0f;
+        ColorCore.SetCoreColor(stemColor);
     }
 }

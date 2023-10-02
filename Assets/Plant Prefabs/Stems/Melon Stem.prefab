@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stemColor: {r: 0.027723404, g: 0.8396226, b: 0.029529236, a: 0}
-  size: {x: 0, y: 0, z: 0}
+  size: {x: 1.2, y: 1.2, z: 0}
   rotation: {x: 0, y: 0, z: -45}
   coreImage: {fileID: 21300000, guid: 54928c052429ed64fbe6431b45f4e97e, type: 3}
   stemImage: {fileID: 21300000, guid: 54928c052429ed64fbe6431b45f4e97e, type: 3}

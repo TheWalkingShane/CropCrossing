@@ -2,22 +2,20 @@ using UnityEngine;
 
 public class StemCombiner2 : MonoBehaviour
 {
-    public GameObject objectToCopy11;
-    public GameObject objectToCopy22;
-    private GameObject objectToCopy1;
-    private GameObject objectToCopy2;
-    private GameObject cropCombination;
+    public GameObject objectToCopy1;
+    public GameObject objectToCopy2;
+    private GameObject cropCombinationPrefab;
+    
     private void Start()
     {
-        objectToCopy1 = objectToCopy11;
-        objectToCopy2 = objectToCopy22;
-        //This start function is for testing purposes only
+        // This start function is for testing purposes only
         if (objectToCopy1 != null || objectToCopy2 != null)
         {
             Debug.Log("Calling Combine Objects");
             CombineObjects();
         }
     }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Crop"))
@@ -35,34 +33,35 @@ public class StemCombiner2 : MonoBehaviour
         }
         if (objectToCopy1 != null && objectToCopy2 != null)
         {
-            CombineObjects();   
+            CombineObjects();
         }
-        
     }
+
     private void CombineObjects()
     {
         // This is where you put the logic for combining objects
         Debug.Log("Combining objects: " + objectToCopy1.name + " and " + objectToCopy2.name);
 
-        // Reset objectToCopy1 and objectToCopy2 to null if needed
-        
-        //Object 1 is our base crop.
-        cropCombination = objectToCopy1;
-        Stem2 cropCombinationStem = cropCombination.GetComponent<Stem2>();
+        // Create a new copy of objectToCopy1
+        GameObject newCropCombination = Instantiate(objectToCopy1, transform.position, Quaternion.identity);
+        Stem2 cropCombinationStem = newCropCombination.GetComponent<Stem2>();
 
-        //Object 2 is where we shall inherit core image and color.
+        // Object 2 is where we shall inherit core image and color.
         Stem2 stem2Component = objectToCopy2.GetComponent<Stem2>();
-        //Inheriting values here{
-            cropCombinationStem.connectionPoint = stem2Component.connectionPoint;
-            cropCombinationStem.size = stem2Component.size;
-            cropCombinationStem.stemColor = stem2Component.stemColor;
-        //{
-        //Spawn object
-        Instantiate(cropCombination, transform.position, Quaternion.identity);
+        
+        // Calculate the average color between objectToCopy1 and objectToCopy2
+        Color averageColor = (cropCombinationStem.stemColor + stem2Component.stemColor) / 2.0f;
+
+        // Inheriting values here
+        cropCombinationStem.connectionPoint = stem2Component.connectionPoint;
+        cropCombinationStem.size = (cropCombinationStem.size + stem2Component.size) / 2.0f;
+        cropCombinationStem.stemColor = averageColor;
+
         // Resetting objectToCopy1 and objectToCopy2 to null
         objectToCopy1 = null;
         objectToCopy2 = null;
     }
+
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("Crop"))
@@ -79,6 +78,7 @@ public class StemCombiner2 : MonoBehaviour
             }
         }
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Colliding with: " + collision.gameObject.name);
