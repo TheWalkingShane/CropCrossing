@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4822629002887226512}
   - component: {fileID: 4915435442154936960}
   - component: {fileID: 3124986394895696289}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pineapple Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7723856388749774185}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1526974, y: -2.7736912, z: 0.054148674}
+  m_LocalPosition: {x: -1.1526974, y: -1.8, z: 0.054148674}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -51,7 +51,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7723856388749774185}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -128,30 +128,43 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7898855411917921932}
-  - component: {fileID: 245524666706198502}
-  m_Layer: 0
+  - component: {fileID: 6735305347960055120}
+  - component: {fileID: 5380942242545671031}
+  m_Layer: 6
   m_Name: Pineapple Core Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7898855411917921932
-Transform:
+--- !u!224 &7898855411917921932
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9194778814193312666}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.11, y: -2.08, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2522605237379796525}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &245524666706198502
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.11, y: -14.3}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &6735305347960055120
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9194778814193312666}
+  m_CullTransparentMesh: 1
+--- !u!212 &5380942242545671031
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

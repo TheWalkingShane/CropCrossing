@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9118383874741782969}
   - component: {fileID: 6906761698349414031}
   - component: {fileID: -4430614026501557067}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cherry Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3064254331605433568}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -129,7 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5705010003223381179}
   - component: {fileID: 8203694322058504598}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cherry Core Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ Transform:
   m_GameObject: {fileID: 7800511085489854512}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1, y: -7.4, z: 0}
+  m_LocalPosition: {x: -0.1, y: -14.9, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -192,7 +192,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 788ca7aaaaec8194296b09b145c1edf5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1fe909e63ad323a47af9b377dc1e8c76, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
