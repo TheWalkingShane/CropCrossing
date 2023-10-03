@@ -11,7 +11,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Prefabs/DragDrop Old.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Reece Inventory/Draggable Item Quib.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -97,6 +97,8 @@
       <workItem from="1696287832792" duration="2595000" />
       <workItem from="1696297844040" duration="3039000" />
       <workItem from="1696308936777" duration="1910000" />
+      <workItem from="1696310915891" duration="2876000" />
+      <workItem from="1696358990685" duration="645000" />
     </task>
     <servers />
   </component>
@@ -107,5 +109,24 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Reece Inventory/Draggable Item Quib.cs</url>
+          <line>28</line>
+          <properties documentPath="C:\Users\rebel\Plant Crossbreeding\Assets\Scripts\Reece Inventory\Draggable Item Quib.cs" initialLine="28" containingFunctionPresentation="Method 'OnMouseUp'">
+            <startOffsets>
+              <option value="657" />
+            </startOffsets>
+            <endOffsets>
+              <option value="676" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
