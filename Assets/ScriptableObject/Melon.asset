@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Melon
   cost: 5
-  cropGO: {fileID: 7723856388749774185, guid: a7f919cd5f3dfc24fa8879c8b5fb8de1, type: 3}
+  cropGO: {fileID: 1113921072644312599, guid: a37cb4aafdd01214dbe960da198e3798, type: 3}

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Eggplant
   cost: 5
-  cropGO: {fileID: 8971900787229894682, guid: 6cc2a5fa6ca6c634490efdbb5975f3f3, type: 3}
+  cropGO: {fileID: 1113921072644312599, guid: 679c379271f61804a9a76388004eeb43, type: 3}
