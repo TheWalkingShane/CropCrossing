@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class StemCombiner2 : MonoBehaviour
@@ -16,18 +17,19 @@ public class StemCombiner2 : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Crop"))
+        Debug.Log(this.gameObject + "is colliding with " + other.gameObject);
+        if (other.gameObject.CompareTag("Crop"))
         {
             if (objectToCopy1 == null)
             {
-                objectToCopy1 = collision.gameObject;
+                objectToCopy1 = other.gameObject;
                 Debug.Log("Set objectToCopy1 to " + objectToCopy1.name);
             }
             else if (objectToCopy2 == null)
             {
-                objectToCopy2 = collision.gameObject;
+                objectToCopy2 = other.gameObject;
                 Debug.Log("Set objectToCopy2 to " + objectToCopy2.name);
             }
         }
@@ -36,6 +38,7 @@ public class StemCombiner2 : MonoBehaviour
             CombineObjects();
         }
     }
+    
 
     private void CombineObjects()
     {
@@ -62,16 +65,16 @@ public class StemCombiner2 : MonoBehaviour
         objectToCopy2 = null;
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
-        if (collision.gameObject.CompareTag("Crop"))
+        if (other.gameObject.CompareTag("Crop"))
         {
-            if (collision.gameObject == objectToCopy1)
+            if (other.gameObject == objectToCopy1)
             {
                 objectToCopy1 = null;
                 Debug.Log("Cleared objectToCopy1");
             }
-            else if (collision.gameObject == objectToCopy2)
+            else if (other.gameObject == objectToCopy2)
             {
                 objectToCopy2 = null;
                 Debug.Log("Cleared objectToCopy2");
@@ -79,13 +82,4 @@ public class StemCombiner2 : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("Colliding with: " + collision.gameObject.name);
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        Debug.Log("No longer colliding with: " + collision.gameObject.name);
-    }
 }

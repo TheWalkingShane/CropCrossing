@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,20 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 {
     public Image image;
     [HideInInspector] public Transform parentAfterDrag;
-    
+
+    private void Update()
+    {
+        // Get the current position of the GameObject
+        /*Vector3 currentPosition = transform.position;
+
+        // Set the z component of the position to 0
+        currentPosition.z = 0;
+
+        // Assign the updated position back to the GameObject
+        transform.position = currentPosition;*/
+        
+    }
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         Debug.Log("Begin Drag");

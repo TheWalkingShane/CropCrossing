@@ -10,6 +10,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Prefabs/DragDrop Old.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -91,7 +94,9 @@
       <workItem from="1696143161802" duration="1195000" />
       <workItem from="1696221923461" duration="1283000" />
       <workItem from="1696229254905" duration="391000" />
-      <workItem from="1696287832792" duration="1926000" />
+      <workItem from="1696287832792" duration="2595000" />
+      <workItem from="1696297844040" duration="3039000" />
+      <workItem from="1696308936777" duration="1910000" />
     </task>
     <servers />
   </component>
