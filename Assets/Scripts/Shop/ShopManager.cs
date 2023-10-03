@@ -3,9 +3,12 @@ using UnityEngine;
 
 public class ShopManager : MonoBehaviour
 {
+    
+   
+    
     public GameObject shopCanvas; 
     public TextMeshProUGUI moneyHUD; 
-    public int money = 100; 
+    public int money = 1000; 
     
     public GameObject inventorySlotPrefab;
     public Transform inventoryGrid;
