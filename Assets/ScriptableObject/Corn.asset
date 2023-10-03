@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Corn
   cost: 5
-  cropGO: {fileID: 2463311277717436485, guid: 75c65ba4f06e52b44b73c6d0a4e1897f, type: 3}
+  cropGO: {fileID: 6541227786656039989, guid: 7f5a0a48bed859f48bbfd0c588e9e7b2, type: 3}
