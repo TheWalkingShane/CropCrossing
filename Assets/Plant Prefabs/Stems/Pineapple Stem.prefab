@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 4050784508078482740}
   - component: {fileID: 4954042213532286917}
   - component: {fileID: 4750347158318471006}
-  m_Layer: 0
+  - component: {fileID: 2766971961144155158}
+  m_Layer: 6
   m_Name: Pineapple Stem
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.6791, y: 0.579, z: 16.4527}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 45.5455}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 4.55455}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6836672552940368083}
@@ -101,7 +102,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -119,12 +120,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf477cb0b00b5414f9424bf96d54f7c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stemColor: {r: 0.37552494, g: 0.027450958, b: 0.8392157, a: 0}
-  size: {x: 0, y: 0, z: 0}
+  stemColor: {r: 0.8392157, g: 0.48909348, b: 0.027450958, a: 0}
+  size: {x: 0.4, y: 0.4, z: 0}
   rotation: {x: 0, y: 0, z: 0}
   coreImage: {fileID: 21300000, guid: f41464fb9013d354fb9eb061763e65e0, type: 3}
   stemImage: {fileID: 21300000, guid: f2933e2a8c947104b9bba01701327c8b, type: 3}
   connectionPoint: {fileID: 7723856388749774185, guid: 3bf2be0deff60894d9edc59a2d2c45f8, type: 3}
+--- !u!54 &2766971961144155158
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113921072644312599}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3856246159841799569
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,7 +164,8 @@ GameObject:
   - component: {fileID: 6836672552940368083}
   - component: {fileID: 7432991547132004926}
   - component: {fileID: 3492089766202825417}
-  m_Layer: 5
+  - component: {fileID: 8679649894831541111}
+  m_Layer: 6
   m_Name: Pineapple Stem Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,7 +227,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: f2933e2a8c947104b9bba01701327c8b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -255,3 +284,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &8679649894831541111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3856246159841799569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94fc3d74a4c097048a17db9cebea78a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 0}
+  parentAfterDrag: {fileID: 0}

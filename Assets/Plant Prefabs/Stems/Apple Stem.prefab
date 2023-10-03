@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.67907685, y: 0.579, z: -5.07}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 45.5455}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 4.55455}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6836672552940368083}
@@ -101,7 +101,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -119,8 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf477cb0b00b5414f9424bf96d54f7c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stemColor: {r: 0.027723404, g: 0.8396226, b: 0.029529236, a: 0}
-  size: {x: 0, y: 0, z: 0}
+  stemColor: {r: 1, g: 0, b: 0.05882353, a: 0}
+  size: {x: 0.45, y: 0.45, z: 0}
   rotation: {x: 0, y: 0, z: 0}
   coreImage: {fileID: 21300000, guid: 85c2c0cf1a6f69244ab292f4ea08b70f, type: 3}
   stemImage: {fileID: 21300000, guid: 487cda4ba7f479742aad217319f180e0, type: 3}
@@ -197,7 +197,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 487cda4ba7f479742aad217319f180e0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
