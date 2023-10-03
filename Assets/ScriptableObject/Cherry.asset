@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Cherry
   cost: 5
-  cropGO: {fileID: 3064254331605433568, guid: 17f40618279d8d84a8e8113f7f82a35f, type: 3}
+  cropGO: {fileID: 2705079624052515240, guid: 21d5b14b4e9d7474f93dcb0d3cb1d007, type: 3}

@@ -7,6 +7,7 @@ public class ItemsManager : MonoBehaviour
 {
     public Behaviour Shop_Canvas;
     public ShopManager shopManager;
+    public InventorySlotQuib[] inventorySlotQuibs;
     
     public ShopItemSO[] shopItemSO;
     public GameObject[] shopPanelGO;
@@ -66,17 +67,48 @@ public class ItemsManager : MonoBehaviour
     public void PurchaseItem(int btnNumber)
     {
         //Will check if User has enough Money to Purchase the Item
-        if (shopManager.money >= shopItemSO[btnNumber].cost)
+        if (SlotFull())
         {
-            shopManager.money = shopManager.money - shopItemSO[btnNumber].cost;
-            CheckPurchaseable();
-            CreateCrop(btnNumber);
+            Debug.Log("Slots are Full");
         }
+        else
+        {
+            if (shopManager.money >= shopItemSO[btnNumber].cost)
+            {
+                shopManager.money = shopManager.money - shopItemSO[btnNumber].cost;
+                CheckPurchaseable();
+                CreateCrop(btnNumber);
+            }
+        }
+
     }
 
     public void CreateCrop(int btnNumber)
     {
         //Spawn the crop Purchased
-        Instantiate(shopItemSO[btnNumber].cropGO, transform.position, Quaternion.identity);
+        for (int i = 0; i < inventorySlotQuibs.Length; i++)
+        {
+            if (!inventorySlotQuibs[i].isOccupied)
+            {
+                Instantiate(shopItemSO[btnNumber].cropGO, inventorySlotQuibs[i].transform.position, Quaternion.identity);
+                break;
+            }
+            
+        }
+        
+    }
+
+    public bool SlotFull()
+    {
+        for (int i = 0; i < inventorySlotQuibs.Length; i++)
+        {
+            if (!inventorySlotQuibs[i].isOccupied)
+            {
+                return false;
+            }
+            
+        }
+
+        return true;
     }
 }
