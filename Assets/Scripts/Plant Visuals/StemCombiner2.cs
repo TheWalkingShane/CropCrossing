@@ -99,10 +99,16 @@ public class StemCombiner2 : MonoBehaviour
             this.GetComponent<Hybridization>().BeginHybridProcess(objectToCopy1, objectToCopy2, newCropCombination);
             newCropCombination.transform.parent.GetComponent<DisplayStatsScript>().setTextHolderObjects(geneManger, statManager);
             // Resetting objectToCopy1 and objectToCopy2 to null
+            Destroy(objectToCopy1.transform.parent.gameObject);
+            Destroy(objectToCopy2.transform.parent.gameObject);
+            Destroy(objectToCopy1);
+            Destroy(objectToCopy2);
             objectToCopy1 = null;
             objectToCopy2 = null;
+            
             // Nudge newCropCombination's position down by -0.5 units along the X and Y axes
             //newCropCombination.transform.localPosition += new Vector3(-0.4013103f, -0.3f, 0f);
+            
         }
         else
         {
