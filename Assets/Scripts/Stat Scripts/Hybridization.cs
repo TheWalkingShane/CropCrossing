@@ -5,15 +5,19 @@ using UnityEngine;
 using System.Text;
 using UnityEditor.IMGUI.Controls;
 using UnityEngine.Assertions.Must;
+using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
 
 public class Hybridization : MonoBehaviour
 {
-    public GameObject slot1Crop;
-    public GameObject slot2Crop;
+    public GameObject slot1;
+    public GameObject slot2;
     public GameObject finalSlot;
-    public GameObject hybridPlantPrefab;
-    
+    public GameObject hybridPlantDragPrefab;
+    public GameObject hybridPlant;
+
+    public GameObject leftCrop;
+    public GameObject rightCrop;
     public List<string> slot1Genes;
     public List<string> slot2Genes;
 
@@ -23,21 +27,19 @@ public class Hybridization : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        finalSlot = this.transform.GetChild(2).gameObject;
-        slot1Crop = this.transform.GetChild(0).gameObject;
-        slot2Crop = this.transform.GetChild(1).gameObject;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space") && (slot1Crop.transform.childCount != 0 && slot2Crop.transform.childCount != 0) &&
-            finalSlot.transform.childCount == 0)
-        {
-            slot1Genes = slot1Crop.transform.GetChild(0).GetComponent<StatKeeper>().Retrieve_Genes();
-            slot2Genes = slot2Crop.transform.GetChild(0).GetComponent<StatKeeper>().Retrieve_Genes();
-            GenerateGeneSequences();
-        }
+        // if (Input.GetKeyDown("space") && (slot1Crop.transform.childCount != 0 && slot2Crop.transform.childCount != 0) &&
+        //     finalSlot.transform.childCount == 0)
+        // {
+        //     slot1Genes = slot1Crop.transform.GetChild(0).GetComponent<StatKeeper>().Retrieve_Genes();
+        //     slot2Genes = slot2Crop.transform.GetChild(0).GetComponent<StatKeeper>().Retrieve_Genes();
+        //     GenerateGeneSequences();
+        // }
     }
 
     void GenerateGeneSequences()
@@ -159,7 +161,6 @@ public class Hybridization : MonoBehaviour
 
     void CreateNewHybrid()
     {
-        Instantiate(hybridPlantPrefab, finalSlot.transform);
         GameObject hybrid = finalSlot.transform.GetChild(0).gameObject;
 
         float newNutrition = 0, newYield = 0, newFirmness = 0, newLifespan = 0;
@@ -235,5 +236,38 @@ public class Hybridization : MonoBehaviour
         
         hybrid.GetComponent<StatKeeper>().Set_New_Stats(newNutrition, newYield, newFirmness, newLifespan);
         hybrid.GetComponent<StatKeeper>().SetNewGenes(hybridGenes);
+    }
+
+    void SeasonChange()
+    {
+        
+    }
+
+    void LeftSlotFilled(GameObject slotObject)
+    {
+        leftCrop = slotObject.transform.GetChild(0).gameObject;
+        this.SendMessage("SetObject1", leftCrop);
+    }
+    
+    void RightSlotFilled(GameObject slotObject)
+    {
+        rightCrop = slotObject.transform.GetChild(0).gameObject;
+        this.SendMessage("SetObject2", rightCrop);
+        CheckIfReadyToHybridize();
+    }
+
+    void CheckIfReadyToHybridize()
+    {
+        if (leftCrop != null && rightCrop != null)
+        {
+            BeginHybridization();
+        }
+    }
+    
+    void BeginHybridization()
+    {
+        GameObject dragObject = Instantiate(hybridPlantDragPrefab, finalSlot.transform);
+        this.gameObject.SendMessage("setDragObject", dragObject);
+        this.gameObject.SendMessage("CombineObjects");
     }
 }    

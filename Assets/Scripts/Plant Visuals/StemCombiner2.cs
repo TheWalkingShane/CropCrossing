@@ -5,8 +5,9 @@ public class StemCombiner2 : MonoBehaviour
 {
     public GameObject objectToCopy1;
     public GameObject objectToCopy2;
+    public GameObject finalSlot;
     private GameObject cropCombinationPrefab;
-    
+    private GameObject dragObject;
     private void Start()
     {
         // This start function is for testing purposes only
@@ -46,7 +47,7 @@ public class StemCombiner2 : MonoBehaviour
         Debug.Log("Combining objects: " + objectToCopy1.name + " and " + objectToCopy2.name);
 
         // Create a new copy of objectToCopy1
-        GameObject newCropCombination = Instantiate(objectToCopy1, transform.position, Quaternion.identity);
+        GameObject newCropCombination = Instantiate(objectToCopy1, finalSlot.transform.position, Quaternion.identity);
         Stem2 cropCombinationStem = newCropCombination.GetComponent<Stem2>();
 
         // Object 2 is where we shall inherit core image and color.
@@ -59,7 +60,10 @@ public class StemCombiner2 : MonoBehaviour
         cropCombinationStem.connectionPoint = stem2Component.connectionPoint;
         cropCombinationStem.size = (cropCombinationStem.size + stem2Component.size) / 2.0f;
         cropCombinationStem.stemColor = averageColor;
-
+        
+        //Setting new crop's parent object to be the drag prefab so that it can be moved after being spawned in.
+        //newCropCombination.transform.SetParent(dragObject.transform);
+        
         // Resetting objectToCopy1 and objectToCopy2 to null
         objectToCopy1 = null;
         objectToCopy2 = null;
@@ -81,5 +85,21 @@ public class StemCombiner2 : MonoBehaviour
             }
         }
     }
+    
+    //These two functions are required in order to get the combination process to function properly. Both are called in
+    //the hybridization script
+    public void SetObject1(GameObject crop)
+    {
+        objectToCopy1 = crop;
+    }
+    
+    public void SetObject2(GameObject crop)
+    {
+        objectToCopy2 = crop;
+    }
 
+    public void setDragObject(GameObject emptyDragObject)
+    {
+        dragObject = emptyDragObject;
+    }
 }

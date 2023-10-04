@@ -3,7 +3,7 @@ using UnityEngine;
 public class InventorySlotQuib : MonoBehaviour
 {
     public bool isOccupied = false; // Indicates whether the slot is occupied
-    
+    public GameObject hybridScriptOwner;
     private void Start()
     {
         // Check for collisions with items when the scene starts
@@ -31,6 +31,14 @@ public class InventorySlotQuib : MonoBehaviour
             // Snap the item to the slot
             other.transform.position = transform.position;
             isOccupied = true;
+
+            if (name == "L Slot")
+            {
+                hybridScriptOwner.SendMessage("LeftSlotFilled", other.gameObject);
+            } else if (name == "R Slot")
+            {
+                hybridScriptOwner.SendMessage("RightSlotFilled", other.gameObject);
+            }
         }
     }
 
