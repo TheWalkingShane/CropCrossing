@@ -16,6 +16,31 @@ public class Core2 : MonoBehaviour
         
         //The above function is mostly outdated and handled by Stem2 code.
     }
+    
+    private void CheckForParentStem2(Transform currentTransform)
+    {
+        // Check if the current transform has a parent
+        if (currentTransform.parent != null)
+        {
+            // Check if the parent has a Stem2 component
+            Stem2 stem2Component = currentTransform.parent.GetComponent<Stem2>();
+            if (stem2Component != null)
+            {
+                // Parent has a Stem2 component
+                
+            }
+            else
+            {
+                // Recursively check the next parent
+                CheckForParentStem2(currentTransform.parent);
+            }
+        }
+        else
+        {
+            // No more parents to check
+            Debug.Log("No parent with Stem2 component found.");
+        }
+    }
 
     public void SetCoreColor(Color CoreColor)
     {
