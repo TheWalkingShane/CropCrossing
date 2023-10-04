@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7220008284541439310}
   - component: {fileID: 5295409510482013809}
   - component: {fileID: 5492542674143172738}
+  - component: {fileID: 4384305879526099406}
   m_Layer: 0
   m_Name: Crop Slot Prefab
   m_TagString: Drag
@@ -146,3 +147,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9710bc16a3def4284bf871cdc92817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4384305879526099406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3716201321626811462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3f9d63cc3a74914b7c6a219bf35e9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StatTextManager: {fileID: 0}
+  GeneTextManager: {fileID: 0}

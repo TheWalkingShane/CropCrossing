@@ -74,7 +74,7 @@ public class ShopManager : MonoBehaviour
         }
     }
 
-    void AddMoney(int amount)
+    public void AddMoney(int amount)
     {
         money += amount;
     }
