@@ -66,8 +66,8 @@ public class Stem2 : MonoBehaviour
     
     public void SetStemAttributes(Sprite image, Color color, Vector3 newSize)
     {
-        SpriteRenderer stemRenderer = GetComponent<SpriteRenderer>();
-        stemRenderer.sprite = image;
+        //SpriteRenderer stemRenderer = GetComponent<SpriteRenderer>();
+        //stemRenderer.sprite = image;
         stemColor = color;
         size = newSize; // Set the size attribute
         UpdateStemVisuals(); // Call a method to update the stem visuals based on these attributes
@@ -75,8 +75,7 @@ public class Stem2 : MonoBehaviour
 
     private void UpdateStemVisuals()
     {
-        SpriteRenderer stemRenderer = GetComponent<SpriteRenderer>();
-        stemRenderer.color = stemColor;
+        //This used to do more, but now just sets size and stuff.
         transform.localScale = size;    
     }
 

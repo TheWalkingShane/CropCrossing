@@ -16,10 +16,13 @@ public class InventorySlotQuib : MonoBehaviour
 
         foreach (Collider collider in colliders)
         {
-            if (collider.CompareTag("Drag"))
+            if (collider.CompareTag("Drag") && !isOccupied)
             {
                 // Handle the case as if the item is already slotted into this slot
                 isOccupied = true;
+
+                // Set the item as a child of the slot
+                collider.transform.parent = transform;
             }
         }
     }
@@ -31,6 +34,9 @@ public class InventorySlotQuib : MonoBehaviour
             // Snap the item to the slot
             other.transform.position = transform.position;
             isOccupied = true;
+
+            // Set the item as a child of the slot
+            other.transform.parent = transform;
         }
     }
 
@@ -40,6 +46,9 @@ public class InventorySlotQuib : MonoBehaviour
         {
             // Item left the slot area
             isOccupied = false;
+            
+            // Remove the item from being a child of the slot
+            other.transform.parent = null;
         }
     }
 }

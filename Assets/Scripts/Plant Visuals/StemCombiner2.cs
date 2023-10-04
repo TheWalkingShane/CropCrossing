@@ -1,85 +1,101 @@
 using System;
+using System.Drawing;
 using UnityEngine;
+using Color = UnityEngine.Color;
 
 public class StemCombiner2 : MonoBehaviour
 {
     public GameObject objectToCopy1;
     public GameObject objectToCopy2;
-    private GameObject cropCombinationPrefab;
-    
-    private void Start()
+    public GameObject printObject;
+    public GameObject cropSlot;
+
+    public void CheckChildrenForStems()
     {
-        // This start function is for testing purposes only
-        if (objectToCopy1 != null || objectToCopy2 != null)
+        Debug.Log("Calling checkchildren");
+        // Get all the children of this Combiner object
+        Transform[] children = transform.GetComponentsInChildren<Transform>();
+
+        // Count the number of children with 'Crop' tag and Stem2 components
+        int cropCount = 0;
+
+        foreach (Transform child in children)
         {
-            Debug.Log("Calling Combine Objects");
-            CombineObjects();
+            if (child.CompareTag("Crop"))
+            {
+                Debug.Log("Crop Found");
+
+                Stem2 stem2Component = child.GetComponent<Stem2>();
+                if (stem2Component != null)
+                {
+                    Debug.Log("Looping Null");
+                    cropCount++;
+
+                    // Set objectToCopy1 and objectToCopy2 to the found Crop objects
+                    if (cropCount == 1)
+                    {
+                        objectToCopy1 = child.gameObject;
+                    }
+                    else if (cropCount == 2)
+                    {
+                        objectToCopy2 = child.gameObject;
+                    }
+
+                    // If you have found two distinct Crop objects, combine them
+                    if (cropCount == 2)
+                    {
+                        Debug.Log("Calling Combine Objects");
+                        CombineObjects();
+                        break; // You can exit the loop once you've found two Crop objects
+                    }
+                }
+            }
         }
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log(this.gameObject + "is colliding with " + other.gameObject);
-        if (other.gameObject.CompareTag("Crop"))
-        {
-            if (objectToCopy1 == null)
-            {
-                objectToCopy1 = other.gameObject;
-                Debug.Log("Set objectToCopy1 to " + objectToCopy1.name);
-            }
-            else if (objectToCopy2 == null)
-            {
-                objectToCopy2 = other.gameObject;
-                Debug.Log("Set objectToCopy2 to " + objectToCopy2.name);
-            }
-        }
-        if (objectToCopy1 != null && objectToCopy2 != null)
-        {
-            CombineObjects();
-        }
-    }
     
-
     private void CombineObjects()
     {
-        // This is where you put the logic for combining objects
-        Debug.Log("Combining objects: " + objectToCopy1.name + " and " + objectToCopy2.name);
-
-        // Create a new copy of objectToCopy1
-        GameObject newCropCombination = Instantiate(objectToCopy1, transform.position, Quaternion.identity);
-        Stem2 cropCombinationStem = newCropCombination.GetComponent<Stem2>();
-
-        // Object 2 is where we shall inherit core image and color.
-        Stem2 stem2Component = objectToCopy2.GetComponent<Stem2>();
-        
-        // Calculate the average color between objectToCopy1 and objectToCopy2
-        Color averageColor = (cropCombinationStem.stemColor + stem2Component.stemColor) / 2.0f;
-
-        // Inheriting values here
-        cropCombinationStem.connectionPoint = stem2Component.connectionPoint;
-        cropCombinationStem.size = (cropCombinationStem.size + stem2Component.size) / 2.0f;
-        cropCombinationStem.stemColor = averageColor;
-
-        // Resetting objectToCopy1 and objectToCopy2 to null
-        objectToCopy1 = null;
-        objectToCopy2 = null;
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Crop"))
+        if (objectToCopy1 != null && objectToCopy2 != null)
         {
-            if (other.gameObject == objectToCopy1)
-            {
-                objectToCopy1 = null;
-                Debug.Log("Cleared objectToCopy1");
-            }
-            else if (other.gameObject == objectToCopy2)
-            {
-                objectToCopy2 = null;
-                Debug.Log("Cleared objectToCopy2");
-            }
+            Debug.Log("Combing " + objectToCopy1 + " and " + objectToCopy2);
+            // This is where you put the logic for combining objects
+            Debug.Log("Combining objects: " + objectToCopy1.name + " and " + objectToCopy2.name);
+
+            // Create a new cropSlot in the same space as objectToCopy1
+            GameObject newCropSlot = Instantiate(cropSlot, printObject.transform.position, Quaternion.identity);
+
+            // Create a new copy of objectToCopy1 as a child of printObject
+            GameObject newCropCombination = Instantiate(objectToCopy1, printObject.transform);
+            //newCropCombination.transform.localScale = (Vector3.one/5);
+            Stem2 cropCombinationStem = newCropCombination.GetComponent<Stem2>();
+
+            // Object 2 is where we shall inherit core image and color.
+            Stem2 stem2Component = objectToCopy2.GetComponent<Stem2>();
+
+            // Calculate the average color between objectToCopy1 and objectToCopy2
+            Color averageColor = (cropCombinationStem.stemColor + stem2Component.stemColor) / 2.0f;
+
+            // Inheriting values here
+            cropCombinationStem.coreImage = stem2Component.coreImage;
+            //cropCombinationStem.connectionPoint = stem2Component.connectionPoint;
+            cropCombinationStem.size = (cropCombinationStem.size + stem2Component.size);
+            cropCombinationStem.stemColor = averageColor;
+            Debug.Log("New size: " + cropCombinationStem.size);
+
+            // Resetting objectToCopy1 and objectToCopy2 to null
+            objectToCopy1 = null;
+            objectToCopy2 = null;
+
+            // Make newCropCombination a child of newCropSlot
+            newCropCombination.transform.parent = newCropSlot.transform;
+            
+            newCropCombination.transform.localScale = Vector3.one/27f;
+            // Nudge newCropCombination's position down by -0.5 units along the X and Y axes
+            //newCropCombination.transform.localPosition += new Vector3(-0.4013103f, -0.3f, 0f);
+        }
+        else
+        {
+            throw new System.Exception("Either objectToCopy1 and objectToCopy2 are null.");
         }
     }
-
 }
