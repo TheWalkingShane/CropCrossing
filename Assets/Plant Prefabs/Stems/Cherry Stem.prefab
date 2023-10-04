@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9180145575452262244}
   - component: {fileID: 849681230109838436}
   - component: {fileID: 8775236879919790257}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Cherry Stem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 5954549011654880226}
   - component: {fileID: 3248889410538629455}
   - component: {fileID: 4070863062337485040}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Cherry Stem
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -245,6 +245,7 @@ MonoBehaviour:
   yield: 20
   firmness: 10
   lifespan: 2
+  money: 5
   Agenes: AaaA
   Bgenes: BBbB
   Cgenes: CCcc

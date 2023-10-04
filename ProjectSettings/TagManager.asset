@@ -15,7 +15,7 @@ TagManager:
   - Water
   - UI
   - Plants
-  - 
+  - UI2
   - 
   - 
   - 
@@ -43,4 +43,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Infobox
+    uniqueID: 3104939507
     locked: 0

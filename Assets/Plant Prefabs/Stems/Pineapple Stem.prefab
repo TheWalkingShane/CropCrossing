@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4750347158318471006}
   - component: {fileID: 2766971961144155158}
   - component: {fileID: 3938042484802514182}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Pineapple Stem
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -148,6 +148,7 @@ MonoBehaviour:
   yield: 1
   firmness: 30
   lifespan: 10
+  money: 5
   Agenes: AAAa
   Bgenes: bbbb
   Cgenes: CcCC
@@ -164,7 +165,7 @@ GameObject:
   - component: {fileID: 7432991547132004926}
   - component: {fileID: 3492089766202825417}
   - component: {fileID: 8679649894831541111}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Pineapple Stem Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}

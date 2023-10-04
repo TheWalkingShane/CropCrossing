@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4050784508078482740}
   - component: {fileID: 4750347158318471006}
   - component: {fileID: 3154027753323118809}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Apple Stem
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -120,6 +120,7 @@ MonoBehaviour:
   yield: 3
   firmness: 15
   lifespan: 5
+  money: 5
   Agenes: AaAA
   Bgenes: Bbbb
   Cgenes: CcCc

@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 8018221372372693990}
   - component: {fileID: 2944018236955337010}
   - component: {fileID: 6154944594151403319}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (20)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -306,7 +306,7 @@ GameObject:
   - component: {fileID: 1953572306747350463}
   - component: {fileID: 3011184034079229616}
   - component: {fileID: 2893332110244693031}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (44)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -515,7 +515,7 @@ GameObject:
   - component: {fileID: 8260008764230099248}
   - component: {fileID: 701703084337679478}
   - component: {fileID: 4537304533352107361}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -892,7 +892,7 @@ GameObject:
   - component: {fileID: 4832058668318912208}
   - component: {fileID: 1700702910602003871}
   - component: {fileID: 7098654195851892367}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (31)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -1185,7 +1185,7 @@ GameObject:
   - component: {fileID: 4901868874957881385}
   - component: {fileID: 4707440175682690610}
   - component: {fileID: 7166250858162495136}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (24)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -1310,7 +1310,7 @@ GameObject:
   - component: {fileID: 4293238088497564653}
   - component: {fileID: 5157975469871959305}
   - component: {fileID: 524068489020891877}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (34)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -1519,7 +1519,7 @@ GameObject:
   - component: {fileID: 2004429029016124806}
   - component: {fileID: 5475732759776132660}
   - component: {fileID: 9035337700289111395}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (45)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -1812,7 +1812,7 @@ GameObject:
   - component: {fileID: 2901497908734427328}
   - component: {fileID: 564925008242868932}
   - component: {fileID: 4667753298277439932}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (39)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -1937,7 +1937,7 @@ GameObject:
   - component: {fileID: 2415609823964094399}
   - component: {fileID: 4877027072517783756}
   - component: {fileID: 7434250009575638659}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (6)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -2398,7 +2398,7 @@ GameObject:
   - component: {fileID: 9196816495567198916}
   - component: {fileID: 6570264151804044829}
   - component: {fileID: 157433859558687161}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (10)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -2523,7 +2523,7 @@ GameObject:
   - component: {fileID: 985832735913209817}
   - component: {fileID: 7085138102754415609}
   - component: {fileID: 2999111370070931755}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (16)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -2648,7 +2648,7 @@ GameObject:
   - component: {fileID: 682545571442834039}
   - component: {fileID: 8573107030967289247}
   - component: {fileID: 7791128460394801144}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (33)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -2773,7 +2773,7 @@ GameObject:
   - component: {fileID: 6862938573655336065}
   - component: {fileID: 1541936095259941364}
   - component: {fileID: 652105316175143285}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -2926,6 +2926,7 @@ MonoBehaviour:
   yield: 30
   firmness: 10
   lifespan: 30
+  money: 5
   Agenes: AaAa
   Bgenes: BBBB
   Cgenes: cCcC
@@ -2943,7 +2944,7 @@ GameObject:
   - component: {fileID: 3028057520546007048}
   - component: {fileID: 2033762742415390716}
   - component: {fileID: 6846756907023686337}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (32)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -3068,7 +3069,7 @@ GameObject:
   - component: {fileID: 2659261093392157126}
   - component: {fileID: 3665005824530378286}
   - component: {fileID: 476856553400237486}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (23)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -3277,7 +3278,7 @@ GameObject:
   - component: {fileID: 506029184347144799}
   - component: {fileID: 6944036869849463811}
   - component: {fileID: 6849332004109134447}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (5)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -3570,7 +3571,7 @@ GameObject:
   - component: {fileID: 8302676525947308590}
   - component: {fileID: 1082634605885878844}
   - component: {fileID: 1882360780256052607}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (28)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -3695,7 +3696,7 @@ GameObject:
   - component: {fileID: 1635583293427876435}
   - component: {fileID: 7103418625849140725}
   - component: {fileID: 5476779866925541900}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (43)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -3820,7 +3821,7 @@ GameObject:
   - component: {fileID: 121987519150027382}
   - component: {fileID: 3166823073513843757}
   - component: {fileID: 103150851520745790}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (17)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -3945,7 +3946,7 @@ GameObject:
   - component: {fileID: 6835299091009299092}
   - component: {fileID: 3199013285563562918}
   - component: {fileID: 6160050163464962181}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (29)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -4070,7 +4071,7 @@ GameObject:
   - component: {fileID: 8788936292219470204}
   - component: {fileID: 1427550581902865086}
   - component: {fileID: 7560133782316752350}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (38)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -4447,7 +4448,7 @@ GameObject:
   - component: {fileID: 5527228219744788762}
   - component: {fileID: 1143148278074900900}
   - component: {fileID: 709905782242183260}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (37)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -4572,7 +4573,7 @@ GameObject:
   - component: {fileID: 6581718879008351379}
   - component: {fileID: 4140914851291844791}
   - component: {fileID: 5218078977793019981}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (41)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -4697,7 +4698,7 @@ GameObject:
   - component: {fileID: 3052696920336356891}
   - component: {fileID: 3336809109094248417}
   - component: {fileID: 6816487951014502763}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (1)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -4906,7 +4907,7 @@ GameObject:
   - component: {fileID: 368802133335864955}
   - component: {fileID: 3432567641836303571}
   - component: {fileID: 1959439871867828509}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (15)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -5031,7 +5032,7 @@ GameObject:
   - component: {fileID: 2719772017485222258}
   - component: {fileID: 4673313628944388884}
   - component: {fileID: 7513835363747022735}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (21)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -5240,7 +5241,7 @@ GameObject:
   - component: {fileID: 7130401410183869301}
   - component: {fileID: 4369436047830814629}
   - component: {fileID: 3150525988994091816}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (12)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -5449,7 +5450,7 @@ GameObject:
   - component: {fileID: 2360724421557977422}
   - component: {fileID: 8172912808663780698}
   - component: {fileID: 8323267554707916657}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (42)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -5574,7 +5575,7 @@ GameObject:
   - component: {fileID: 2219735726601373421}
   - component: {fileID: 3092575756825571451}
   - component: {fileID: 7790608148154308949}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (25)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -5699,7 +5700,7 @@ GameObject:
   - component: {fileID: 6125958044665510030}
   - component: {fileID: 3816289221982090771}
   - component: {fileID: 2855015169010335454}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (3)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -5824,7 +5825,7 @@ GameObject:
   - component: {fileID: 5184309820620332434}
   - component: {fileID: 9206342492929313462}
   - component: {fileID: 465874401703103325}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (19)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -6201,7 +6202,7 @@ GameObject:
   - component: {fileID: 2138404355807792721}
   - component: {fileID: 5757702298874388371}
   - component: {fileID: 4762974924457759393}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (8)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -6410,7 +6411,7 @@ GameObject:
   - component: {fileID: 8660901482172880133}
   - component: {fileID: 584943558558324186}
   - component: {fileID: 5215634340022790776}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (18)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -6619,7 +6620,7 @@ GameObject:
   - component: {fileID: 8430839057021653367}
   - component: {fileID: 2338005006221097931}
   - component: {fileID: 92488273228608687}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (40)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -6744,7 +6745,7 @@ GameObject:
   - component: {fileID: 908095892426501589}
   - component: {fileID: 315687713058134861}
   - component: {fileID: 3579556584329993306}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (26)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -6869,7 +6870,7 @@ GameObject:
   - component: {fileID: 7669121383842569929}
   - component: {fileID: 4683506311813143302}
   - component: {fileID: 4112888232598684787}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (27)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -6994,7 +6995,7 @@ GameObject:
   - component: {fileID: 5275743894304948675}
   - component: {fileID: 1169868535416792878}
   - component: {fileID: 7459085886702198706}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (35)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -7119,7 +7120,7 @@ GameObject:
   - component: {fileID: 4322318891298169758}
   - component: {fileID: 1977235334322397530}
   - component: {fileID: 8002198286399967197}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (7)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -7328,7 +7329,7 @@ GameObject:
   - component: {fileID: 8849825215661496543}
   - component: {fileID: 8571861781991649222}
   - component: {fileID: 9106238063970381553}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (36)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -7453,7 +7454,7 @@ GameObject:
   - component: {fileID: 6234242357158443097}
   - component: {fileID: 1940584658272381136}
   - component: {fileID: 8775233578110256803}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (13)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -7662,7 +7663,7 @@ GameObject:
   - component: {fileID: 809695992583810147}
   - component: {fileID: 5851896782324260990}
   - component: {fileID: 221387735740649996}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (2)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -7871,7 +7872,7 @@ GameObject:
   - component: {fileID: 2383386817407215135}
   - component: {fileID: 3576644909529959441}
   - component: {fileID: 5943329518148592123}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (4)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -8416,7 +8417,7 @@ GameObject:
   - component: {fileID: 6951149425640546826}
   - component: {fileID: 71065797911192077}
   - component: {fileID: 2561764766564787826}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (30)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -8541,7 +8542,7 @@ GameObject:
   - component: {fileID: 5582811227105888968}
   - component: {fileID: 292280070727760812}
   - component: {fileID: 7118201694392998881}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (22)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -8750,7 +8751,7 @@ GameObject:
   - component: {fileID: 5231090301821691689}
   - component: {fileID: 892222880474247112}
   - component: {fileID: 520018001202097597}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (14)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -9211,7 +9212,7 @@ GameObject:
   - component: {fileID: 8974132643640866873}
   - component: {fileID: 1407848611991031142}
   - component: {fileID: 6292098947676380868}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (9)
   m_TagString: Crop
   m_Icon: {fileID: 0}
@@ -9672,7 +9673,7 @@ GameObject:
   - component: {fileID: 8576322533668986365}
   - component: {fileID: 1787712252079525599}
   - component: {fileID: 1131794444937985651}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Corn Stem (11)
   m_TagString: Crop
   m_Icon: {fileID: 0}
