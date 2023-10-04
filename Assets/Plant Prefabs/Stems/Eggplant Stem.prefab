@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 131331688645249698}
   - component: {fileID: 4050784508078482740}
   - component: {fileID: 4750347158318471006}
+  - component: {fileID: 5819254411391723095}
   m_Layer: 0
   m_Name: Eggplant Stem
   m_TagString: Crop
@@ -103,6 +104,26 @@ MonoBehaviour:
   coreImage: {fileID: 21300000, guid: fb83b8d1f2815fb4f9e7d16f00d8a4f8, type: 3}
   stemImage: {fileID: 21300000, guid: 095ca896077fcca4bbab3a4672935a11, type: 3}
   connectionPoint: {fileID: 8971900787229894682, guid: 6cc2a5fa6ca6c634490efdbb5975f3f3, type: 3}
+--- !u!114 &5819254411391723095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113921072644312599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f4ca62f650c45259c8dcfe7a4eebe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nutrition: 25
+  yield: 4
+  firmness: 20
+  lifespan: 10
+  Agenes: aaAA
+  Bgenes: Bbbb
+  Cgenes: cCCc
+  Dgenes: DDdd
 --- !u!1 &3856246159841799569
 GameObject:
   m_ObjectHideFlags: 0

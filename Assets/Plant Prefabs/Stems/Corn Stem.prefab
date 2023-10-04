@@ -2772,6 +2772,7 @@ GameObject:
   - component: {fileID: 6176143585906902717}
   - component: {fileID: 6862938573655336065}
   - component: {fileID: 1541936095259941364}
+  - component: {fileID: 652105316175143285}
   m_Layer: 0
   m_Name: Corn Stem
   m_TagString: Crop
@@ -2909,6 +2910,26 @@ MonoBehaviour:
   coreImage: {fileID: 21300000, guid: 18d5fc1499bf98f409a3ea098a8ba3cb, type: 3}
   stemImage: {fileID: 21300000, guid: 796f1f6eabfa1e1418aecc397899f783, type: 3}
   connectionPoint: {fileID: 7723856388749774185, guid: c7a4587f8a8211d40adce013b8526c73, type: 3}
+--- !u!114 &652105316175143285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2463311277717436485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f4ca62f650c45259c8dcfe7a4eebe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nutrition: 20
+  yield: 30
+  firmness: 10
+  lifespan: 30
+  Agenes: AaAa
+  Bgenes: BBBB
+  Cgenes: cCcC
+  Dgenes: DDDD
 --- !u!1 &2762377166023888572
 GameObject:
   m_ObjectHideFlags: 0

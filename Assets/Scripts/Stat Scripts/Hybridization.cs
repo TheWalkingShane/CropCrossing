@@ -3,57 +3,58 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Text;
+using TMPro;
 using UnityEditor.IMGUI.Controls;
 using UnityEngine.Assertions.Must;
+using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
 
 public class Hybridization : MonoBehaviour
 {
-    public GameObject slot1Crop;
-    public GameObject slot2Crop;
-    public GameObject finalSlot;
-    public GameObject hybridPlantPrefab;
-    
+    public GameObject hybrid;
     public List<string> slot1Genes;
     public List<string> slot2Genes;
 
     public List<string> hybridGenes = new List<string>();
-    List<string> traitsList = new List<string>() { "Aa", "Bb", "Cc", "Dd" };
+    List<char> traitsList = new List<char>();
+    private List<string> permutationList = new List<string>() { "Aa", "Bb", "Cc", "Dd" };
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        finalSlot = this.transform.GetChild(2).gameObject;
-        slot1Crop = this.transform.GetChild(0).gameObject;
-        slot2Crop = this.transform.GetChild(1).gameObject;
-    }
+    public char nutritionChar = 'A', yieldChar = 'B', firmChar = 'C', lifeChar = 'D';
+    public TextMeshProUGUI nGene, yGene, fGene, lGene;
+    private string currentSeason = "Summer";
+    
+    public ShopManager moneyKeeper;
 
-    // Update is called once per frame
-    void Update()
+    public void BeginHybridProcess(GameObject crop1, GameObject crop2, GameObject hybridCrop)
     {
-        if (Input.GetKeyDown("space") && (slot1Crop.transform.childCount != 0 && slot2Crop.transform.childCount != 0) &&
-            finalSlot.transform.childCount == 0)
-        {
-            slot1Genes = slot1Crop.transform.GetChild(0).GetComponent<StatKeeper>().Retrieve_Genes();
-            slot2Genes = slot2Crop.transform.GetChild(0).GetComponent<StatKeeper>().Retrieve_Genes();
-            GenerateGeneSequences();
-        }
+        slot1Genes = crop1.GetComponent<StatKeeper>().Retrieve_Genes();
+        slot2Genes = crop2.GetComponent<StatKeeper>().Retrieve_Genes();
+        hybrid = hybridCrop;
+        
+        traitsList.Add(nutritionChar);
+        traitsList.Add(yieldChar);
+        traitsList.Add(firmChar);
+        traitsList.Add(lifeChar);
+        // for(int i = 0; i < 4; i++) 
+        // {
+        //     Debug.Log(slot1Genes[i] + "\n");
+        // }
+        //
+        // for(int i = 0; i < 4; i++) 
+        // {
+        //     Debug.Log(slot2Genes[i] + "\n");
+        // }
+        GenerateGeneSequences();
     }
-
     void GenerateGeneSequences()
     {
         for(int i = 0; i < 4; i++)
         {
-            List<string> permutations = Permutate(traitsList[i]);
+            List<string> permutations = Permutate(permutationList[i]);
             RemoveInvalidCombos(slot1Genes[i], slot2Genes[i], permutations);
             GeneSelection(permutations, traitsList[i]);
         }
-        
-        for(int i = 0; i < 4; i++)
-        {
-            Debug.Log(hybridGenes[i] + "\n");
-        }
-        
+
         CreateNewHybrid();
     }
     
@@ -80,7 +81,7 @@ public class Hybridization : MonoBehaviour
         }
     }
 
-    void GeneSelection(List<string> permutations, string trait)
+    void GeneSelection(List<string> permutations, char trait)
     {
         int geneWeight = 1, currentWeight = 0;
         List<Tuple<int, string>> weightedGenes = new List<Tuple<int, string>>();
@@ -89,7 +90,7 @@ public class Hybridization : MonoBehaviour
         {
             foreach (char gene in sequence)
             {
-                if (gene == trait[0])
+                if (gene == trait)
                 {
                     geneWeight += 1;
                 }
@@ -159,20 +160,15 @@ public class Hybridization : MonoBehaviour
 
     void CreateNewHybrid()
     {
-        Instantiate(hybridPlantPrefab, finalSlot.transform);
-        GameObject hybrid = finalSlot.transform.GetChild(0).gameObject;
-
         float newNutrition = 0, newYield = 0, newFirmness = 0, newLifespan = 0;
-
-        float[] statArray = hybrid.GetComponent<StatKeeper>().GetStats();
-
+        StatKeeper hybridStats = hybrid.GetComponent<StatKeeper>();
         for (int i = 0; i < 4; i++)
         {
             if (i == 0)
             {
                 foreach (var gene in hybridGenes[0])
                 {
-                    if (gene == 'A')
+                    if (gene == nutritionChar)
                     {
                         newNutrition += 5;
                     }
@@ -188,7 +184,7 @@ public class Hybridization : MonoBehaviour
             {
                 foreach (var gene in hybridGenes[1])
                 {
-                    if (gene == 'B')
+                    if (gene == yieldChar)
                     {
                         newYield += 2;
                     }
@@ -204,7 +200,7 @@ public class Hybridization : MonoBehaviour
             {
                 foreach (var gene in hybridGenes[2])
                 {
-                    if (gene == 'C')
+                    if (gene == firmChar)
                     {
                         newFirmness += 3;
                     }
@@ -220,7 +216,7 @@ public class Hybridization : MonoBehaviour
             {
                 foreach (var gene in hybridGenes[3])
                 {
-                    if (gene == 'D')
+                    if (gene == lifeChar)
                     {
                         newLifespan += 1;
                     }
@@ -233,7 +229,58 @@ public class Hybridization : MonoBehaviour
             }
         }
         
-        hybrid.GetComponent<StatKeeper>().Set_New_Stats(newNutrition, newYield, newFirmness, newLifespan);
-        hybrid.GetComponent<StatKeeper>().SetNewGenes(hybridGenes);
+        hybridStats.Set_New_Stats(newNutrition, newYield, newFirmness, newLifespan);
+        hybridStats.SetNewGenes(hybridGenes);
+        
+        float hybridMoney = hybridStats.GetMoney();
+        float amount = newNutrition + newYield + newFirmness + newLifespan;
+        float newMoneyAmount = hybridMoney + amount;
+        
+        hybridStats.setMoney(newMoneyAmount);
+        moneyKeeper.AddMoney((int)newMoneyAmount);
+        
+        hybridGenes.Clear();
     }
+
+    void SeasonChange()
+    {
+        if (currentSeason == "Spring")
+        {
+            currentSeason = "Summer";
+            nutritionChar = 'A';
+            yieldChar = 'B';
+            firmChar = 'C';
+            lifeChar = 'D';
+        } 
+        else if (currentSeason == "Summer")
+        {
+            currentSeason = "Fall";
+            nutritionChar = 'A';
+            yieldChar = 'b';
+            firmChar = 'C';
+            lifeChar = 'd';
+        } 
+        else if (currentSeason == "Fall")
+        {
+            currentSeason = "Winter";
+            nutritionChar = 'a';
+            yieldChar = 'B';
+            firmChar = 'c';
+            lifeChar = 'D';
+        }
+        else if (currentSeason == "Winter")
+        {
+            currentSeason = "Spring";
+            nutritionChar = 'a';
+            yieldChar = 'b';
+            firmChar = 'c';
+            lifeChar = 'd';
+        }
+        
+        nGene.SetText("Nutrition: " + nutritionChar);
+        yGene.SetText("Yield: " + yieldChar);
+        fGene.SetText("Firmness: " + firmChar);
+        lGene.SetText("Lifespan: " + lifeChar);
+    }
+    
 }    

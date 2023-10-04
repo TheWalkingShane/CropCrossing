@@ -13,7 +13,7 @@ public class ShopSpawnManager : MonoBehaviour
         currentSlotIndex = 0;
         
         //Test Code:
-        SpawnItemInSlot(tester);
+        //SpawnItemInSlot(tester);
     }
 
     public bool SpawnItemInSlot(GameObject item)

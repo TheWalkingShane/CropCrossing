@@ -21,7 +21,8 @@ public class StatKeeper : MonoBehaviour
     public float yield = 3f;
     public float firmness = 15f;
     public float lifespan = 5f;
-
+    public float money = 5f;
+    
     public string Agenes = "AaAA";
     public string Bgenes = "Bbbb";
     public string Cgenes = "CcCc";
@@ -42,21 +43,36 @@ public class StatKeeper : MonoBehaviour
 
     public void Set_New_Stats(float newNutrition, float newYield, float newFirmness, float newLifespan)
     {
-        nutrition = newNutrition;
-        yield = newYield;
-        firmness = newFirmness;
-        lifespan = newLifespan;
+        nutrition += newNutrition;
+        yield += newYield;
+        firmness += newFirmness;
+        lifespan += newLifespan;
     }
     
     public void SetNewGenes(List<string> newGenes)
     {
-        genes = newGenes;
+        genes.Clear();
+        
+        for(int i = 0; i < 4; i++) 
+        {
+            genes.Add(newGenes[i]);
+        }
     }
     
     public float[] GetStats()
     {
         float[] statArray = new float[4]{nutrition, yield, firmness, lifespan};
         return statArray;
+    }
+
+    public float GetMoney()
+    {
+        return money;
+    }
+
+    public void setMoney(float newMoney)
+    {
+        money = newMoney;
     }
     //this initial stats are completely arbitrary for the time being.
     //monetary value is deliberately absent and will likely only be incorporated once the money exists in the first place.

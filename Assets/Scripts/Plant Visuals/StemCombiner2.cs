@@ -9,7 +9,10 @@ public class StemCombiner2 : MonoBehaviour
     public GameObject objectToCopy2;
     public GameObject printObject;
     public GameObject cropSlot;
-
+    
+    //these variables are needed for the UI to work.
+    public GameObject statManager;
+    public GameObject geneManger;
     public void CheckChildrenForStems()
     {
         Debug.Log("Calling checkchildren");
@@ -77,19 +80,27 @@ public class StemCombiner2 : MonoBehaviour
 
             // Inheriting values here
             cropCombinationStem.coreImage = stem2Component.coreImage;
-            //cropCombinationStem.connectionPoint = stem2Component.connectionPoint;
+            cropCombinationStem.connectionPoint = stem2Component.connectionPoint;
             cropCombinationStem.size = (cropCombinationStem.size + stem2Component.size);
             cropCombinationStem.stemColor = averageColor;
             Debug.Log("New size: " + cropCombinationStem.size);
-
-            // Resetting objectToCopy1 and objectToCopy2 to null
-            objectToCopy1 = null;
-            objectToCopy2 = null;
 
             // Make newCropCombination a child of newCropSlot
             newCropCombination.transform.parent = newCropSlot.transform;
             
             newCropCombination.transform.localScale = Vector3.one/27f;
+            
+            Core2[] core2Components = newCropCombination.GetComponentsInChildren<Core2>();
+            foreach (Core2 core2 in core2Components)
+            {
+                Destroy(core2.gameObject);
+            }
+            
+            this.GetComponent<Hybridization>().BeginHybridProcess(objectToCopy1, objectToCopy2, newCropCombination);
+            newCropCombination.transform.parent.GetComponent<DisplayStatsScript>().setTextHolderObjects(geneManger, statManager);
+            // Resetting objectToCopy1 and objectToCopy2 to null
+            objectToCopy1 = null;
+            objectToCopy2 = null;
             // Nudge newCropCombination's position down by -0.5 units along the X and Y axes
             //newCropCombination.transform.localPosition += new Vector3(-0.4013103f, -0.3f, 0f);
         }
