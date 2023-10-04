@@ -31,6 +31,7 @@ public class DisplayStatsScript : MonoBehaviour
             j++;
         }
         
+        statChildren[5].SetText(_thisObjectStats.GetMoney().ToString());
     }
 
     private void OnMouseExit()
@@ -46,6 +47,7 @@ public class DisplayStatsScript : MonoBehaviour
             j++;
         }
         
+        statChildren[5].SetText(" ");
     }
 
     public void setTextHolderObjects(GameObject geneObject, GameObject statObject)
@@ -53,15 +55,5 @@ public class DisplayStatsScript : MonoBehaviour
         StatTextManager = statObject;
         GeneTextManager = geneObject;
     }
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
