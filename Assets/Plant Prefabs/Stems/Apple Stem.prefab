@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 131331688645249698}
   - component: {fileID: 4050784508078482740}
   - component: {fileID: 4750347158318471006}
+  - component: {fileID: 3154027753323118809}
   m_Layer: 0
   m_Name: Apple Stem
   m_TagString: Crop
@@ -103,6 +104,26 @@ MonoBehaviour:
   coreImage: {fileID: 21300000, guid: 85c2c0cf1a6f69244ab292f4ea08b70f, type: 3}
   stemImage: {fileID: 21300000, guid: 487cda4ba7f479742aad217319f180e0, type: 3}
   connectionPoint: {fileID: 1244888259649171882, guid: 793c4444b19faa94c806f7bde8254bed, type: 3}
+--- !u!114 &3154027753323118809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113921072644312599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f4ca62f650c45259c8dcfe7a4eebe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nutrition: 20
+  yield: 3
+  firmness: 15
+  lifespan: 5
+  Agenes: AaAA
+  Bgenes: Bbbb
+  Cgenes: CcCc
+  Dgenes: dddd
 --- !u!1 &3856246159841799569
 GameObject:
   m_ObjectHideFlags: 0

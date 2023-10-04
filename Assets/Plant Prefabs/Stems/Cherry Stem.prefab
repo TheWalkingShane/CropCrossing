@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 1407076217737597668}
   - component: {fileID: 5954549011654880226}
   - component: {fileID: 3248889410538629455}
+  - component: {fileID: 4070863062337485040}
   m_Layer: 0
   m_Name: Cherry Stem
   m_TagString: Crop
@@ -228,6 +229,26 @@ MonoBehaviour:
   coreImage: {fileID: 21300000, guid: 1fe909e63ad323a47af9b377dc1e8c76, type: 3}
   stemImage: {fileID: 21300000, guid: 5509abbbb3eb3764c8ecfc239817c8c4, type: 3}
   connectionPoint: {fileID: 3064254331605433568, guid: 17f40618279d8d84a8e8113f7f82a35f, type: 3}
+--- !u!114 &4070863062337485040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2705079624052515240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f4ca62f650c45259c8dcfe7a4eebe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nutrition: 15
+  yield: 20
+  firmness: 10
+  lifespan: 2
+  Agenes: AaaA
+  Bgenes: BBbB
+  Cgenes: CCcc
+  Dgenes: dddd
 --- !u!1 &2987642361359623424
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 131331688645249698}
   - component: {fileID: 4050784508078482740}
   - component: {fileID: 4750347158318471006}
+  - component: {fileID: 4381815085260586561}
   m_Layer: 0
   m_Name: Melon Stem
   m_TagString: Crop
@@ -103,6 +104,26 @@ MonoBehaviour:
   coreImage: {fileID: 21300000, guid: 54928c052429ed64fbe6431b45f4e97e, type: 3}
   stemImage: {fileID: 21300000, guid: 54928c052429ed64fbe6431b45f4e97e, type: 3}
   connectionPoint: {fileID: 7723856388749774185, guid: a7f919cd5f3dfc24fa8879c8b5fb8de1, type: 3}
+--- !u!114 &4381815085260586561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113921072644312599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f4ca62f650c45259c8dcfe7a4eebe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nutrition: 40
+  yield: 2
+  firmness: 25
+  lifespan: 5
+  Agenes: AAAA
+  Bgenes: bbbB
+  Cgenes: CcCc
+  Dgenes: DdDd
 --- !u!1 &3856246159841799569
 GameObject:
   m_ObjectHideFlags: 0
