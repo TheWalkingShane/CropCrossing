@@ -23,7 +23,8 @@ public class Hybridization : MonoBehaviour
 
     public List<string> hybridGenes = new List<string>();
     List<string> traitsList = new List<string>() { "Aa", "Bb", "Cc", "Dd" };
-    
+
+    private string currentSeason = "Spring";
     // Start is called before the first frame update
     void Start()
     {
@@ -266,7 +267,7 @@ public class Hybridization : MonoBehaviour
     
     void BeginHybridization()
     {
-        GameObject dragObject = Instantiate(hybridPlantDragPrefab, finalSlot.transform.position, Quaternion.identity);
+        GameObject dragObject = Instantiate(hybridPlantDragPrefab, finalSlot.transform.position, finalSlot.transform.rotation);
         this.gameObject.SendMessage("setDragObject", dragObject);
         this.gameObject.SendMessage("CombineObjects");
     }

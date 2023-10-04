@@ -16,6 +16,10 @@ public class SeasonSwitch : MonoBehaviour
         float dayNormalized = _day % 1f;
 
         float rotationDegreesPerDay = 360f;
-        clockHandTransform.eulerAngles = new Vector3(0, 0, -dayNormalized * rotationDegreesPerDay);
+
+        float angle = dayNormalized * rotationDegreesPerDay;
+
+        
+        clockHandTransform.eulerAngles = new Vector3(0, 0, dayNormalized * rotationDegreesPerDay);
     }
 }
