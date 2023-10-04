@@ -62,7 +62,7 @@ public class StemCombiner2 : MonoBehaviour
         cropCombinationStem.stemColor = averageColor;
         
         //Setting new crop's parent object to be the drag prefab so that it can be moved after being spawned in.
-        //newCropCombination.transform.SetParent(dragObject.transform);
+        newCropCombination.transform.SetParent(dragObject.transform);
         
         // Resetting objectToCopy1 and objectToCopy2 to null
         objectToCopy1 = null;
@@ -88,14 +88,14 @@ public class StemCombiner2 : MonoBehaviour
     
     //These two functions are required in order to get the combination process to function properly. Both are called in
     //the hybridization script
-    public void SetObject1(GameObject crop)
+    public void SetObject1(GameObject crop1)
     {
-        objectToCopy1 = crop;
+        objectToCopy1 = crop1;
     }
     
-    public void SetObject2(GameObject crop)
+    public void SetObject2(GameObject crop2)
     {
-        objectToCopy2 = crop;
+        objectToCopy2 = crop2;
     }
 
     public void setDragObject(GameObject emptyDragObject)

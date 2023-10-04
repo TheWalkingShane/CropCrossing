@@ -266,7 +266,7 @@ public class Hybridization : MonoBehaviour
     
     void BeginHybridization()
     {
-        GameObject dragObject = Instantiate(hybridPlantDragPrefab, finalSlot.transform);
+        GameObject dragObject = Instantiate(hybridPlantDragPrefab, finalSlot.transform.position, Quaternion.identity);
         this.gameObject.SendMessage("setDragObject", dragObject);
         this.gameObject.SendMessage("CombineObjects");
     }
